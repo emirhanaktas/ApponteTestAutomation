@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class ConsultantLogin {
     public AppiumDriver<WebElement> driver;
@@ -77,17 +78,17 @@ public class ConsultantLogin {
 
     public void test() throws InterruptedException{
 
-        Thread.sleep(2500);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         WebElement consultantSelect = driver.findElement(consultantButton);
         consultantSelect.click();
 
-        Thread.sleep(1500);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement loginSelect = driver.findElement(loginButton);
         loginSelect.click();
 
-        Thread.sleep(1500);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement phoneNumberTextSelect = driver.findElement(phoneNumberText);
         driver.getKeyboard().pressKey("5");
@@ -101,55 +102,55 @@ public class ConsultantLogin {
         driver.getKeyboard().pressKey("4");
         driver.getKeyboard().pressKey("6");
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         WebElement codeButtonSelect = driver.findElement(codeButton);
         codeButtonSelect.click();
 
-        Thread.sleep(10000);
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 
         //Manuel OTP girisi yapılacak.
 
         WebElement continueButtonSelect = driver.findElement(continueButton);
         continueButtonSelect.click();
 
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         WebElement signUpPopUpDisplay = driver.findElement(signUpPopUp);
         WebElement mainPageDisplay = driver.findElement(mainPage);
 
         if (signUpPopUpDisplay.isDisplayed()){
 
-            Thread.sleep(1000);
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
             WebElement signUpButtonSelect = driver.findElement(signUpButton);
             signUpButtonSelect.click();
 
-            Thread.sleep(10000);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             WebElement nameTextSelect = driver.findElement(nameText);
             nameTextSelect.sendKeys("Emirhan");
             driver.getKeyboard().sendKeys(Keys.ENTER);
 
-            Thread.sleep(2000);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
             WebElement surnameTextSelect = driver.findElement(surnameText);
             surnameTextSelect.sendKeys("Aktaş");
 
-            Thread.sleep(2000);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
             WebElement companyTextSelect = driver.findElement(companyText);
             companyTextSelect.sendKeys("Appcent Danışmanlık");
 
-            Thread.sleep(2000);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
             WebElement saveButtonSelect2 = driver.findElement(kaydetButton);
             saveButtonSelect2.click();
 
-            Thread.sleep(5000);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
         else if(mainPageDisplay.isDisplayed()){
-            Thread.sleep(5000);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             WebElement addButtonSelect = driver.findElement(addButton);
             addButtonSelect.click();
         }
