@@ -107,21 +107,21 @@ public class ConsultantLogin {
         WebElement codeButtonSelect = driver.findElement(codeButton);
         codeButtonSelect.click();
 
-        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        Thread.sleep(10000);
 
         //Manuel OTP girisi yapılacak.
 
         WebElement continueButtonSelect = driver.findElement(continueButton);
         continueButtonSelect.click();
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         WebElement signUpPopUpDisplay = driver.findElement(signUpPopUp);
         WebElement mainPageDisplay = driver.findElement(mainPage);
 
         if (signUpPopUpDisplay.isDisplayed()){
 
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             WebElement signUpButtonSelect = driver.findElement(signUpButton);
             signUpButtonSelect.click();
@@ -132,17 +132,17 @@ public class ConsultantLogin {
             nameTextSelect.sendKeys("Emirhan");
             driver.getKeyboard().sendKeys(Keys.ENTER);
 
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
             WebElement surnameTextSelect = driver.findElement(surnameText);
             surnameTextSelect.sendKeys("Aktaş");
 
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
             WebElement companyTextSelect = driver.findElement(companyText);
             companyTextSelect.sendKeys("Appcent Danışmanlık");
 
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
             WebElement saveButtonSelect2 = driver.findElement(kaydetButton);
             saveButtonSelect2.click();
