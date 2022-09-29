@@ -31,7 +31,7 @@ public class NotificationSettings {
 
     By saveButtonId = By.id("mobi.appcent.apponte:id/btnSave");
 
-    By cancelButtonId = By.id("mobi.appcent.apponte:id/btnCancel");
+   // By cancelButtonId = By.id("mobi.appcent.apponte:id/btnCancel");
 
     By toolbarBackButtonId = By.id("mobi.appcent.apponte:id/toolbarBackBtn");
 
@@ -71,24 +71,22 @@ public class NotificationSettings {
         WebElement profileTab = driver.findElement(profileId);
         profileTab.click();
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement notificationSettings = driver.findElement(notificationSettingsId);
         notificationSettings.click();
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement rememberSwitch = driver.findElement(rememberSwitchId);
         rememberSwitch.click();
 
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement notificationSwitch = driver.findElement(notificationsId);
         notificationSwitch.click();
 
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement saveButton = driver.findElement(saveButtonId);
         saveButton.click();
@@ -98,11 +96,9 @@ public class NotificationSettings {
         WebElement toolbarBackButton = driver.findElement(toolbarBackButtonId);
         toolbarBackButton.click();
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        //Bu alanda emulator/gercek cihaz calistirdiginizda switchler calismayacaktir. Bu switchler test case'de acili
-        //kalması zorunlu alanlardir. Bu sebepten testte bir yanlislik oldugu dusunulmemeli.
-
+        //Bu alanda emulator/gercek cihaz calistirdiginizda switchler calismayacaktir. Bu switchler test case'de acili kalması zorunlu alanlardir. Bu sebepten testte bir yanlislik oldugu dusunulmemeli.
 
     }
 

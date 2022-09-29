@@ -34,7 +34,11 @@ public class AppointmentSettings {
 
     By restTimeButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.RelativeLayout[2]/android.widget.Button");
 
+    By restTimeId = By.id("mobi.appcent.apponte:id/hbAddBreakButton");
+
     By workWayButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout[2]");
+
+    By saveButtonId = By.id("mobi.appcent.apponte:id/hbSaveBtn");
 
     By automaticMessage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout[3]");
 
@@ -97,25 +101,36 @@ public class AppointmentSettings {
             Thread.sleep(2000);
         }
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
-        for (int i=0; i<7; i++){
+        /* WebElement restTimeSelect2  = driver.findElement(restTimeId);
+        restTimeSelect2.click();
 
-            WebElement restTimeSelect  = driver.findElement(restTimeButton);
+        Thread.sleep(3000); */
+
+        for (int j=0; j<7; j++){
+
+            WebElement restTimeSelect  = driver.findElement(restTimeId);
             restTimeSelect.click();
 
             Thread.sleep(2000);
 
+            driver.findElement(MobileBy.AndroidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
+
+            Thread.sleep(1500);
+
         }
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
-        WebElement backButtonSelect = driver.findElement(backButton);
+
+        WebElement backButtonSelect = driver.findElement(saveButtonId);
         backButtonSelect.click();
 
         Thread.sleep(2000);

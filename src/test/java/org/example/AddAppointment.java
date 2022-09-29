@@ -1,6 +1,7 @@
 package org.example;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -40,7 +41,7 @@ public class AddAppointment {
 
     By testPerson = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]");
 
-    By addDaySelect = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[25]");
+    By addDaySelect = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[33]/android.widget.TextView");
 
     By pageCloseButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageButton");
 
@@ -96,6 +97,11 @@ public class AddAppointment {
         addDateSelect.click();
 
         Thread.sleep(2000);
+
+        driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
+
+        Thread.sleep(10000);
 
         WebElement addDay = driver.findElement(addDaySelect);
         addDay.click();
