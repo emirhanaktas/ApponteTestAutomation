@@ -40,12 +40,25 @@ public class AppointmentSettings {
 
     By saveButtonId = By.id("mobi.appcent.apponte:id/hbSaveBtn");
 
-    By automaticMessage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout[3]");
+    By automaticMessageId = By.id("mobi.appcent.apponte:id/rlAutoMessages");
 
     By workOffDay = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout[3]");
 
     By meetDetailButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout[3]");
 
+    By onlineSessionId = By.id("mobi.appcent.apponte:id/cbOnlineSession");
+
+    By faceToFaceSessionId = By.id("mobi.appcent.apponte:id/cbFaceToFaceSession");
+
+    By workTypeSaveId = By.id("mobi.appcent.apponte:id/btnWorkTypeSave");
+
+    By confirmAddId = By.id("mobi.appcent.apponte:id/btnConfirmAdd");
+
+    By denyAddId = By.id("mobi.appcent.apponte:id/btnDenyAdd");
+
+    By confirmTextId = By.id("mobi.appcent.apponte:id/etConfirmMessage");
+
+    By denyTextId = By.id("mobi.appcent.apponte:id/etDenyMessage");
 
     @BeforeTest
     public void setup() {
@@ -141,11 +154,38 @@ public class AppointmentSettings {
 
         Thread.sleep(2000);
 
-/*
-        WebElement automaticMessageSelect = driver.findElement(automaticMessage);
+
+       WebElement onlineSession = driver.findElement(onlineSessionId);
+       onlineSession.click();
+
+       Thread.sleep(2000);
+
+       WebElement faceToFaceSession = driver.findElement(faceToFaceSessionId);
+       faceToFaceSession.click();
+
+       Thread.sleep(2000);
+       
+       WebElement workTypeSave = driver.findElement(workTypeSaveId);
+       workTypeSave.click();
+
+       Thread.sleep(4000);
+
+        WebElement automaticMessageSelect = driver.findElement(automaticMessageId);
         automaticMessageSelect.click();
 
+        Thread.sleep(3000);
+
+        WebElement confirmText = driver.findElement(confirmAddId);
+        confirmText.click();
+
         Thread.sleep(2000);
+
+        driver.getKeyboard().pressKey("Randevunuz başarıyla oluşturulmuştur!");
+        //!!!!!
+
+        Thread.sleep(10000);
+
+/*
 
         WebElement workOffDaySelect = driver.findElement(workOffDay);
         workOffDaySelect.click();

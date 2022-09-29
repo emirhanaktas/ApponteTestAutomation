@@ -113,6 +113,8 @@ public class AddAppointment {
 
         Thread.sleep(3000);
 
+
+
     }
 
     @AfterMethod
