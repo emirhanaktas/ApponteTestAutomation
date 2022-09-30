@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -103,14 +104,15 @@ public class ProfileSettings {
         Thread.sleep(2000);
 
         WebElement adressSelect = driver.findElement(adressInfo);
-        adressSelect.sendKeys("Örnek Mahallesi, Örnek Sokak");
-        driver.getKeyboard().sendKeys(Keys.ENTER);
+       // adressSelect.sendKeys("Örnek Mahallesi, Örnek Sokak");
+        adressSelect.sendKeys("Örnek Mahallesi, Örnek Sokak, No:1");
+        driver.getKeyboard().pressKey(Keys.ENTER);
 
-        Thread.sleep(2000);
+        Thread.sleep(10000);
 
     }
 
-    @AfterMethod
+    @AfterTest
     public void teardown(){
         driver.quit();
     }

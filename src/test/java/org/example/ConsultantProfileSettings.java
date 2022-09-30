@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -104,7 +105,7 @@ public class ConsultantProfileSettings {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @AfterMethod
+    @AfterTest
     public void teardown(){
         driver.quit();
     }

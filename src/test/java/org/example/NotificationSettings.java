@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -93,16 +95,15 @@ public class NotificationSettings {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        WebElement toolbarBackButton = driver.findElement(toolbarBackButtonId);
-        toolbarBackButton.click();
+        Assert.assertTrue(saveButton.isDisplayed());
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Thread.sleep(2000);
 
         //Bu alanda emulator/gercek cihaz calistirdiginizda switchler calismayacaktir. Bu switchler test case'de acili kalması zorunlu alanlardir. Bu sebepten testte bir yanlislik oldugu dusunulmemeli.
 
     }
 
-    @AfterMethod
+    @AfterTest
 
     public void teardown(){
         driver.quit();
