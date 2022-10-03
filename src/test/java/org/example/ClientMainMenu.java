@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -37,9 +38,7 @@ public class ClientMainMenu {
 
         }catch (MalformedURLException mx){
             System.out.println("Hatalı oluşturulmuş URL İstisnası!");
-
         }
-
     }
 
     @Test
@@ -49,8 +48,7 @@ public class ClientMainMenu {
         Thread.sleep(10000);
 
     }
-
-    @AfterMethod
+    @AfterTest
     public void teardown(){
         driver.quit();
     }
