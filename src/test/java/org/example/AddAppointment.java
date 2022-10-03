@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Scanner;
 
 public class AddAppointment {
 
@@ -46,6 +47,12 @@ public class AddAppointment {
     By addClock = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[4]/android.widget.TextView");
 
     By saveMeetingTime = By.id("mobi.appcent.apponte:id/btnSaveMeetingTime");
+
+    By meetPopUpPath = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup");
+
+    By costumSaveButton = By.id("mobi.appcent.apponte:id/btnCustomSave");
+
+    By costumCancelButton = By.id("mobi.appcent.apponte:id/btnCustomCancel");
 
     By pageCloseButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageButton");
 
@@ -131,6 +138,38 @@ public class AddAppointment {
         saveButtonSelect1.click();
 
         Thread.sleep(3000);
+
+        WebElement meetPopUp = driver.findElement(meetPopUpPath);
+        if (meetPopUp.isDisplayed()){
+                WebElement costumSave = driver.findElement(costumSaveButton);
+                costumSave.click();
+                Thread.sleep(2000);
+            }
+
+ /*
+        String secim;
+        System.out.println("Ana Sayfa: 1, Değiştir: 2");
+        Scanner keyb = new Scanner(System.in);
+        secim = keyb.nextLine();
+
+        Thread.sleep(1000);
+
+        if (meetPopUp.isDisplayed()){
+            if (secim=="1"){
+                WebElement costumSave = driver.findElement(costumSaveButton);
+                costumSave.click();
+                Thread.sleep(2000);
+            }
+            else{
+                WebElement costumCancel = driver.findElement(costumCancelButton);
+                costumCancel.click();
+                Thread.sleep(2000);
+            }
+        }
+        */
+
+
+        Thread.sleep(2000);
 
 
 
