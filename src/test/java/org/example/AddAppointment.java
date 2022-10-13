@@ -4,17 +4,15 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class AddAppointment {
 
@@ -22,15 +20,6 @@ public class AddAppointment {
 
     public WebDriverWait wait;
 
-    By consultantButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.Button[2]");
-
-    By loginButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.Button[2]");
-
-    By phoneNumberText = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText");
-
-    By codeButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button");
-
-    By continueButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[3]/android.widget.Button");
 
     By addButton = By.xpath("//android.widget.FrameLayout[@content-desc=\"Add\"]");
 
@@ -55,6 +44,8 @@ public class AddAppointment {
     By costumCancelButton = By.id("mobi.appcent.apponte:id/btnCustomCancel");
 
     By pageCloseButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageButton");
+
+
 
     @BeforeTest
     public void setup() {
@@ -84,94 +75,71 @@ public class AddAppointment {
 
     public void test() throws InterruptedException{
 
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement addButtonSelect = driver.findElement(addButton);
         addButtonSelect.click();
 
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement addPersonSelect = driver.findElement(addPersonButton);
         addPersonSelect.click();
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement testPersonSelect = driver.findElement(testPerson);
         testPersonSelect.click();
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement saveButtonSelect = driver.findElement(saveButton);
         saveButtonSelect.click();
 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         WebElement addDateSelect = driver.findElement(addDateButton);
         addDateSelect.click();
 
-        Thread.sleep(2000);
-
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement addDay = driver.findElement(addDaySelect);
         addDay.click();
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
 
-        Thread.sleep(6000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement addClockSelect = driver.findElement(addClock);
         addClockSelect.click();
 
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
-        Thread.sleep(7000);
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement saveMeetingTimeSelect = driver.findElement(saveMeetingTime);
         saveMeetingTimeSelect.click();
 
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement saveButtonSelect1 = driver.findElement(saveButton);
         saveButtonSelect1.click();
 
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement meetPopUp = driver.findElement(meetPopUpPath);
         if (meetPopUp.isDisplayed()){
                 WebElement costumSave = driver.findElement(costumSaveButton);
                 costumSave.click();
-                Thread.sleep(2000);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             }
 
- /*
-        String secim;
-        System.out.println("Ana Sayfa: 1, Değiştir: 2");
-        Scanner keyb = new Scanner(System.in);
-        secim = keyb.nextLine();
-
-        Thread.sleep(1000);
-
-        if (meetPopUp.isDisplayed()){
-            if (secim=="1"){
-                WebElement costumSave = driver.findElement(costumSaveButton);
-                costumSave.click();
-                Thread.sleep(2000);
-            }
-            else{
-                WebElement costumCancel = driver.findElement(costumCancelButton);
-                costumCancel.click();
-                Thread.sleep(2000);
-            }
-        }
-        */
-
-
-        Thread.sleep(2000);
-
-
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
