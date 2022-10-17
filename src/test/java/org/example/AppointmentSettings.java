@@ -186,22 +186,6 @@ public class AppointmentSettings {
 
         Thread.sleep(10000);
 
-/*
-
-        WebElement workOffDaySelect = driver.findElement(workOffDay);
-        workOffDaySelect.click();
-
-        Thread.sleep(2000);
-
-        WebElement meetDetailSelect = driver.findElement(meetDetailButton);
-        meetDetailSelect.click();
-
-        Thread.sleep(2000);
-
-        Thread.sleep(50000); */
-
-
-
     }
 
     @AfterTest

@@ -1,6 +1,7 @@
 package org.example;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class ConsultantProfileSettings {
@@ -33,6 +35,14 @@ public class ConsultantProfileSettings {
     By backButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.LinearLayout/android.widget.ImageView");
 
     By backButton2 = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.ImageView");
+
+    By clockSettings = By.id("mobi.appcent.apponte:id/rlWorkAndBreakSetter");
+
+    By addDayButton = By.id("mobi.appcent.apponte:id/hb_add_work_btn");
+
+    By meetSaveButton = By.id("mobi.appcent.apponte:id/hbSaveBtn");
+
+    By workingDays = By.id("mobi.appcent.apponte:id/rvWorkingDays");
 
     @BeforeTest
     public void setup() {
@@ -103,6 +113,57 @@ public class ConsultantProfileSettings {
         codeShareSelect.click();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @Test
+
+    public void appointmentSettingsTest(){
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        WebElement profileButtonSelect = driver.findElement(profileButton);
+        profileButtonSelect.click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        WebElement meetSettingsSelect = driver.findElement(meetSettings);
+        meetSettingsSelect.click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        WebElement clockSettingsSelect = driver.findElement(clockSettings);
+        clockSettingsSelect.click();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        WebElement dayAddButton = driver.findElement(addDayButton);
+
+        for (int i=0; i<6; i++){
+            dayAddButton.click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        }
+
+        /*    WebElement element = (WebElement) driver.findElement(MobileBy.AndroidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList()" +
+                            ".scrollIntoView(new UiSelector().text(\"exact_text\"))"));
+            element.click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); */
+
+
+
+          List<WebElement> list = driver.findElements(workingDays);
+          System.out.println(list);
+
+
+
+        driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
+
+        WebElement saveButtonSelect = driver.findElement(meetSaveButton);
+        saveButtonSelect.click();
+
+
+
     }
 
     @AfterTest

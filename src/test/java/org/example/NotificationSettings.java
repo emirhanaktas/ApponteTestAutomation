@@ -95,10 +95,6 @@ public class NotificationSettings {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        Assert.assertTrue(saveButton.isDisplayed());
-
-        Thread.sleep(2000);
-
         //Bu alanda emulator/gercek cihaz calistirdiginizda switchler calismayacaktir. Bu switchler test case'de acili kalması zorunlu alanlardir. Bu sebepten testte bir yanlislik oldugu dusunulmemeli.
 
     }
