@@ -1,5 +1,7 @@
 package org.example;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
@@ -16,7 +18,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ConsultantLogin {
+public class ConsultantLogin extends ExtendTestReports{
+
     public AppiumDriver<WebElement> driver;
 
     public WebDriverWait wait;
@@ -75,15 +78,23 @@ public class ConsultantLogin {
 
     public void test() throws InterruptedException{
 
+        ExtentTest test1 = extent.createTest("Login Test", "Login test case");
+
+        test1.log(Status.INFO, "Login test başladı!");
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         WebElement consultantSelect = driver.findElement(consultantButton);
         consultantSelect.click();
 
+        test1.log(Status.PASS, "Kurumsal seçimi yapıldı!");
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement loginSelect = driver.findElement(loginButton);
         loginSelect.click();
+
+        test1.log(Status.PASS, "Giriş yap seçimi yapıldı!");
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -101,10 +112,14 @@ public class ConsultantLogin {
 
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+        test1.log(Status.PASS, "Telefon numarası girişi yapıldı!");
+
         WebElement codeButtonSelect = driver.findElement(codeButton);
         codeButtonSelect.click();
 
         Thread.sleep(10000);
+
+        test1.log(Status.PASS, "Kod gönder butonuna basıldı!");
 
         //Manuel OTP girisi yapılacak.
 
@@ -113,8 +128,12 @@ public class ConsultantLogin {
 
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
+        test1.log(Status.PASS, "OTP girişi yapıldı!");
+/*
         WebElement signUpPopUpDisplay = driver.findElement(signUpPopUp);
         WebElement mainPageDisplay = driver.findElement(mainPage);
+
+        test1.log(Status.PASS, "Login test devam ediyor!");
 
         if (signUpPopUpDisplay.isDisplayed()){
 
@@ -125,32 +144,45 @@ public class ConsultantLogin {
 
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+            test1.log(Status.PASS, "Login test devam ediyor!");
+
             WebElement nameTextSelect = driver.findElement(nameText);
             nameTextSelect.sendKeys("Emirhan");
             driver.getKeyboard().sendKeys(Keys.ENTER);
 
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
+            test1.log(Status.PASS, "Login test devam ediyor!");
+
             WebElement surnameTextSelect = driver.findElement(surnameText);
             surnameTextSelect.sendKeys("Aktaş");
 
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+            test1.log(Status.PASS, "Login test devam ediyor!");
 
             WebElement companyTextSelect = driver.findElement(companyText);
             companyTextSelect.sendKeys("Appcent Danışmanlık");
 
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
+            test1.log(Status.PASS, "Login test devam ediyor!");
+
             WebElement saveButtonSelect2 = driver.findElement(kaydetButton);
             saveButtonSelect2.click();
 
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+            test1.log(Status.PASS, "Login test tamamlandı!");
         }
         else if(mainPageDisplay.isDisplayed()){
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             WebElement addButtonSelect = driver.findElement(addButton);
             addButtonSelect.click();
+            test1.log(Status.PASS, "Login test tamamlandı!");
         }
+*/
+        test1.log(Status.INFO, "Login test tamamlandı!");
 
     }
 
