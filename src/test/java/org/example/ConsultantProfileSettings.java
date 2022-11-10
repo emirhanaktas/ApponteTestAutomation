@@ -72,7 +72,7 @@ public class ConsultantProfileSettings {
 
     public void test() throws InterruptedException{
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement profileButtonSelect = driver.findElement(profileButton);
         profileButtonSelect.click();
@@ -143,25 +143,13 @@ public class ConsultantProfileSettings {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
-        /*    WebElement element = (WebElement) driver.findElement(MobileBy.AndroidUIAutomator(
-                    "new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList()" +
-                            ".scrollIntoView(new UiSelector().text(\"exact_text\"))"));
-            element.click();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); */
-
-
-
-          List<WebElement> list = driver.findElements(workingDays);
-          System.out.println(list);
-
-
 
         driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(50)"));
 
+
         WebElement saveButtonSelect = driver.findElement(meetSaveButton);
         saveButtonSelect.click();
-
 
 
     }

@@ -4,7 +4,7 @@
     <test name="ApponteAutomation">
         <classes>
 
-            <class name="org.example.AppTest">
+            <class name="org.example.loginTest">
                 <methods>
                     <include name="test"/>
                 </methods>
