@@ -22,8 +22,6 @@ public class addAppoint {
 
     public AppiumDriver<WebElement> driver;
 
-    public MobileDriver<MobileElement> driverMobile;
-
     public WebDriverWait wait;
 
     By consultantButton = By.id("mobi.appcent.apponte:id/btnInstitutional");
