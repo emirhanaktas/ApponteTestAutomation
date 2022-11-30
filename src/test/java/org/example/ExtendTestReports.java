@@ -25,7 +25,6 @@ public class ExtendTestReports {
     }
     @BeforeSuite
 
-
     public void reportSetup2(){
 
         htmlReporter2 = new ExtentHtmlReporter("addAppoint.html");
