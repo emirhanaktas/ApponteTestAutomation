@@ -101,16 +101,8 @@ public class Consultee {
 
         WebElement numberTextSelect = driver.findElement(telephoneNumberText);
         numberTextSelect.click();
-        driver.getKeyboard().pressKey("5");
-        driver.getKeyboard().pressKey("3");
-        driver.getKeyboard().pressKey("7");
-        driver.getKeyboard().pressKey("9");
-        driver.getKeyboard().pressKey("1");
-        driver.getKeyboard().pressKey("5");
-        driver.getKeyboard().pressKey("7");
-        driver.getKeyboard().pressKey("4");
-        driver.getKeyboard().pressKey("3");
-        driver.getKeyboard().pressKey("2");
+        driver.getKeyboard().pressKey("5555555555");
+
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 

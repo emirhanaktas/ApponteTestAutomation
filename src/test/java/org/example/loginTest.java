@@ -85,7 +85,7 @@ public class loginTest extends ExtendTestReports{
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement telefonSecim = driver.findElement(telefonNoButon);
-        driver.getKeyboard().pressKey("5372448046");
+        driver.getKeyboard().pressKey("5555555555");
 
         testBasla.log(Status.INFO, "telefon numarası girişi yapıldı!");
 

@@ -93,17 +93,8 @@ public class AppTest
         Thread.sleep(3000);
 
         WebElement phoneNumberTextClick = driver.findElement(phoneNumberText);
-      //  phoneNumberTextClick.sendKeys("5379157432");
-        driver.getKeyboard().pressKey("5");
-        driver.getKeyboard().pressKey("3");
-        driver.getKeyboard().pressKey("7");
-        driver.getKeyboard().pressKey("9");
-        driver.getKeyboard().pressKey("1");
-        driver.getKeyboard().pressKey("5");
-        driver.getKeyboard().pressKey("7");
-        driver.getKeyboard().pressKey("4");
-        driver.getKeyboard().pressKey("3");
-        driver.getKeyboard().pressKey("2");
+        driver.getKeyboard().pressKey("5555555555");
+
 
         Thread.sleep(3500);
 

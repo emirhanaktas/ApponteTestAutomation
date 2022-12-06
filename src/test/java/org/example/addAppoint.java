@@ -116,7 +116,7 @@ public class addAppoint {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         WebElement phoneNumberSelect = driver.findElement(numberText);
-        driver.getKeyboard().pressKey("5372448046");
+        driver.getKeyboard().pressKey("5555555555");
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -164,7 +164,7 @@ public class addAppoint {
 
         WebElement personNumberSelect = driver.findElement(phoneText);
         personNumberSelect.click();
-        driver.getKeyboard().pressKey("5379157432");
+        driver.getKeyboard().pressKey("5555555555");
 
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 

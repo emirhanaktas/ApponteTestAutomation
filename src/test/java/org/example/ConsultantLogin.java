@@ -82,16 +82,8 @@ public class ConsultantLogin extends ExtendTestReports{
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         WebElement phoneNumberTextSelect = driver.findElement(phoneNumberText);
-        driver.getKeyboard().pressKey("5");
-        driver.getKeyboard().pressKey("3");
-        driver.getKeyboard().pressKey("7");
-        driver.getKeyboard().pressKey("2");
-        driver.getKeyboard().pressKey("4");
-        driver.getKeyboard().pressKey("4");
-        driver.getKeyboard().pressKey("8");
-        driver.getKeyboard().pressKey("0");
-        driver.getKeyboard().pressKey("4");
-        driver.getKeyboard().pressKey("6");
+        driver.getKeyboard().pressKey("5555555555");
+
 
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
